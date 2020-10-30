@@ -10,45 +10,15 @@ on:
     branches: [ main ]
 
 jobs:
-  # This workflow contains a single job called "build"
-  compile:
-    # The type of runner that the job will run on
+  build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@master
       with:
         python-version: 3.8
-    
-    - name: Build environment
+    - name: Check Package Yaml
       run: |
-      sudo apt-get update
-      sudo apt-get -qq install gcc-multilib libc6:i386 libgcc1:i386 libstdc++5:i386 libstdc++6:i386 libsdl-dev scons || true
-      [ $RTT_TOOL_CHAIN = 'sourcery-arm' ] && wget -q https://github.com/RT-Thread/toolchains-ci/releases/download/arm-2017q2-v6/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 && sudo tar xjf gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 -C /opt && export RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin && /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc --version || true
-      export RTT_ROOT=`pwd`
-      [ x$RTT_CC == x ] && export RTT_CC='gcc' || true
-
-      env:
-        RTT_BSP: 'rtt_default_project_0' 
-        RTT_TOOL_CHAIN: 'sourcery-arm'
-
-    - name: Build Project
-      run: |
-      scons -C $RTT_BSP
-
-  yml_check:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@master
-      with:
-        python-version: 3.8
-      
-    - name: Check Package Yml
-      run: |
-      pip install rt-thread-studio
-      python -c "from rt_thread_studio import bsp_checker;bsp_path = '.';checker = bsp_checker.BspChecker(bsp_path);checker.check();" 
+        pip install rt-thread-studio
+        python -c "from rt_thread_studio import bsp_checker;bsp_path = '.';checker = bsp_checker.BspChecker(bsp_path);checker.check();" 
