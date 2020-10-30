@@ -1,0 +1,127 @@
+board:
+  buy_url_cn: https://item.taobao.com/item.htm?spm=a230r.1.14.16.e7486262Fp3aNn&id=610483824704&ns=1&abbucket=14#detail
+  buy_url_global: https://estore.st.com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/stm32mp157a-dk1.html
+  debug_interface: SWD
+  debugger: ST-LINK
+  description_en: The STM32MP157A-DK1 Discovery kits is designed as complete demonstration and development
+    platforms for STMicroelectronics Arm®-based dual Cortex®-A7 32 bits and Cortex®-M4 32 bits MPUs in the STM32MP1 Series
+    and their STPMIC1 companion chip.
+  description_zh: STM32MP157A-DK1 Discovery kits 支持包旨在完整的演示和开发 STM32MP1 系列中基于意法半导体的双 Cortex-A7 32位和 Cortex-M4 32 位的 MPU 平台以及 STPMIC1 配套芯片。
+  emulator_machine: ''
+  large_image: documents/images/board_large.png
+  name: STM32MP157A-ST-DK1
+  price_cn: 454.07 CNY
+  price_global: 67.62 USD
+  sale_contact_cn: https://www.stmcu.com.cn/
+  sale_contact_global: https://www.st.com/content/st_com/en.html
+  small_image: documents/images/board_small.png
+  vendor: STMicroelectronics
+  version: Rev.A
+chip:
+  chip_name: STM32MP157AACx
+  clock_source: HSE
+  device_vendor: STMicroelectronics
+  family_name: STM32
+  rx_name: PB2
+  series_name: STM32MP1
+  source_freq: '8000000'
+  sub_series_name: STM32MP157
+  target_freq: '209000000'
+  tx_name: PG11
+  uart_name: UART4
+docs:
+- category: manual
+  file: documents/manuals/UM2534.pdf
+  title: Reference manual
+- category: sheet
+  file: documents/sheet/DS12504.pdf
+  title: STM32MP157A Datasheet
+example_projects: []
+features:
+- On-board ST-LINK/V2.1
+- ST PMIC STPMIC1
+- 4-Gbit DDR3L, 16 bits, 533 MHz
+- 1-Gbps Ethernet (RGMII) compliant with IEEE-802.3ab
+- USB OTG HS
+- 4 user LEDs
+- 2 user and reset push-buttons, 1 wake-up button
+- MIPI DSI
+- HDMI
+- Stereo headset jack including analog microphone input
+- microSD card
+- Arduino Uno V3 expansion connectors
+features_zh:
+- 板载 ST-LINK/V2.1
+- ST PMIC STPMIC1
+- 4-Gbit DDR3L, 16 bits, 533 MHz
+- 符合 IEEE-802.3ab 的 1 Gbps 以太网 (RGMII)
+- USB OTG HS
+- 4 个用户 LED
+- 2 个用户按键， 1个复位按键，1个唤醒按键
+- MIPI DSI
+- 高清晰度多媒体接口
+- 立体声耳机插孔包括模拟麦克风输入
+- microSD card
+- Arduino Uno V3 扩展连接器
+pkg_type: Board_Support_Packages
+pkg_vendor: RealThread
+pkg_version: 1.0.0
+template_projects:
+- builtin_files:
+  - files_and_folders:
+    - .config
+    - .cproject
+    - .gitignore
+    - .project
+    - .sconsign.dblite
+    - .settings
+    - applications
+    - board
+    - build
+    - cconfig.h
+    - EventRecorderStub.scvd
+    - figures
+    - Kconfig
+    - libraries
+    - project.ewd
+    - project.ewp
+    - project.eww
+    - project.uvopt
+    - project.uvoptx
+    - project.uvprojx
+    - README.md
+    - README_zh.md
+    - rtconfig.h
+    - rtconfig.py
+    - rtconfig.pyc
+    - SConscript
+    - SConstruct
+    - template.ewp
+    - template.eww
+    - template.uvopt
+    - template.uvoptx
+    - template.uvprojx
+    - tools
+    source_path_offset: rtt_default_project_0
+    target_path_offset: ''
+  external_files:
+  - files_and_folders:
+    - components
+    - include
+    - libcpu/arm
+    - libcpu/Kconfig
+    - libcpu/SConscript
+    - src
+    - tools
+    - Kconfig
+    - LICENSE
+    package_name: RT-Thread
+    package_type: RT-Thread_Source_Code
+    package_vendor: ''
+    package_version: latest
+    source_path_offset: rt-thread
+    target_path_offset: rt-thread
+  project_description: ''
+  project_name: ''
+  project_type: rt-thread|@full|@latest
+yaml_version: 3
